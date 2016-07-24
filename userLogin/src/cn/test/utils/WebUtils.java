@@ -44,13 +44,13 @@ public class WebUtils {
 			if (value==null) {
 				return null;
 			}
-			String src=(String) value;
-			if (src.trim().equals("")) {
+			String str=(String) value;
+			if (str.trim().equals("")) {
 				return null;
 			}
 			SimpleDateFormat df =new SimpleDateFormat("yyyy-MM-dd");
 			try {
-				return df.parse(src);
+				return df.parse(str);
 			} catch (ParseException e) {
 				throw new RuntimeException(e);
 			}
@@ -59,7 +59,7 @@ public class WebUtils {
 	 , Date.class); 
 	  
 	  try {
-		BeanUtils.copyProperties(src, dest);
+		BeanUtils.copyProperties(dest, src);
 	} catch (Exception e) {
 		
 		throw new RuntimeException(e);

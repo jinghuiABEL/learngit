@@ -21,6 +21,7 @@ public class RegisterServlet extends HttpServlet {
 		
 		//1.对表单合法性进行校验
 		RegisterForm form = WebUtils.request2Bean(request, RegisterForm.class);
+		System.out.println(form.getPassword());
 		boolean b=form.validate();
 		//2.如果校验失败，则跳回注册页面
 		if (!b) {
